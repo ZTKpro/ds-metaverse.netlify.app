@@ -6,8 +6,8 @@ import Kawasaki from "../models/kawasaki.glb";
 import Desk from "../models/work_desk.glb";
 
 function House() {
-  const primaryColor = "#035CDB";
-  const widthWall = "0.3";
+  // const primaryColor = "#035CDB";
+  // const widthWall = "0.3";
   return (
     <>
       <a-entity
@@ -34,12 +34,7 @@ function House() {
         rotation="0 -90 0"
       ></a-entity>
 
-      <a-box
-        material="roughness: 1"
-        geometry=""
-        scale="200 0.1 200"
-        color="white"
-      ></a-box>
+      <a-box material="roughness: 1" geometry="" scale="200 0.1 200"></a-box>
       <a-light type="" light="type: point; intensity: 2.64"></a-light>
       <a-light type="" light="type: ambient"></a-light>
     </>

@@ -4,7 +4,7 @@ import "aframe";
 import House from "./components/house";
 
 function App() {
-  const primaryColor = "#035CDB";
+  // const primaryColor = "#035CDB";
   return (
     <a-scene>
       <a-sky color="#000000"></a-sky>
