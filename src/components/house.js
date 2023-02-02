@@ -125,6 +125,9 @@ function House() {
         position="-1.52658 6.81507 3.28287"
         id="main-light-2"
       ></a-light>
+      <a-camera>
+        <a-cursor color="#1aaffc"></a-cursor>
+      </a-camera>
     </>
   );
 }
