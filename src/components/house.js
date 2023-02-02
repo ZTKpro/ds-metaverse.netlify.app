@@ -1,5 +1,7 @@
 import "aframe";
 
+import Travel from "./travel";
+
 import Ar from "../models/ar.glb";
 import Bag from "../models/bag.glb";
 import Backpack from "../models/backpack.glb";
@@ -14,7 +16,13 @@ import DisplayImg from "../models/bg.png";
 function House() {
   return (
     <>
-      <a-box scale="25 0.1 25" material="roughness: 0.8" color="black"></a-box>
+      <a-box
+        id="Floor"
+        scale="25 0.1 25"
+        material="roughness: 0.8"
+        color="black"
+      ></a-box>
+      <Travel />
       <a-entity
         id="Bag"
         gltf-model={Bag}
@@ -78,7 +86,15 @@ function House() {
         position="-0.94317 1.624 -3.982"
         src={DisplayImg}
         roughness="0"
-      ></a-box>
+      >
+        <a-plane
+          id="player"
+          material=""
+          geometry=""
+          position="0 0 0.6"
+          scale="0.1 0.22968 1"
+        ></a-plane>
+      </a-box>
       <a-box
         id="main-wall-opacity"
         material="opacity: 0.08"
@@ -92,6 +108,7 @@ function House() {
         geometry=""
         scale="0.3 3 4.21596"
         color="#000000"
+        roughness="0"
         position="3.6 1.55 -2.0481"
       ></a-box>
       <a-box
