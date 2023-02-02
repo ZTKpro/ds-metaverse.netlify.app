@@ -1,8 +1,11 @@
 import "aframe";
 
+import Ar from "../models/ar.glb";
 import Bag from "../models/bag.glb";
+import Backpack from "../models/backpack.glb";
 import Gym from "../models/gym.glb";
 import Couch from "../models/couch.glb";
+import Laptop from "../models/laptop.glb";
 import Mclaren from "../models/mclaren.glb";
 import Maserati from "../models/maserati.glb";
 import Kawasaki from "../models/kawasaki.glb";
@@ -29,6 +32,25 @@ function House() {
         gltf-model={Couch}
         scale="0.005 0.005 0.005"
         rotation="0 180 0"
+      ></a-entity>
+      <a-entity
+        id="Laptop"
+        gltf-model={Laptop}
+        rotation="0 35 0"
+        position="-1.98979 0.66 -1.13224"
+      ></a-entity>
+      <a-entity
+        id="Backpack"
+        gltf-model={Backpack}
+        rotation="-9.38963234660393 82.858291542844 0"
+        position="1.81567 0.32918 0.39574"
+        scale="0.38 0.3 0.3"
+      ></a-entity>
+      <a-entity
+        id="Ar"
+        gltf-model={Ar}
+        position="1.71628 0.37976 -0.03736"
+        rotation="-37.66327 0.19881635491039565 -0.2589769233991321"
       ></a-entity>
       <a-entity
         id="Mclaren"
