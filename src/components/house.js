@@ -1,6 +1,11 @@
 import "aframe";
 
-// import Couch from "../models/couch.glb";
+import Bag from "../models/bag.glb";
+import Gym from "../models/gym.glb";
+import Couch from "../models/couch.glb";
+import Mclaren from "../models/mclaren.glb";
+import Maserati from "../models/maserati.glb";
+import Kawasaki from "../models/kawasaki.glb";
 
 function House() {
   return (
@@ -8,37 +13,37 @@ function House() {
       <a-box scale="25 0.1 25" material="roughness: 0.8" color="black"></a-box>
       <a-entity
         id="Bag"
-        gltf-model="/static/media/bag.82f4a8a4add5fcc73c91.glb"
+        gltf-model={Bag}
         scale="0.001 0.001 0.001"
         position="-4.11123 0 7.12691"
       ></a-entity>
       <a-entity
         id="Gym"
-        gltf-model="/static/media/gym.74ff75eb605c8b2f9e5f.glb"
+        gltf-model={Gym}
         position="-1.08513 1.05272 6.03311"
         rotation="0 90 0"
       ></a-entity>
       <a-entity
         id="Couch"
-        gltf-model="/static/media/couch.d707aa2a86fbaaa32c47.glb"
+        gltf-model={Couch}
         scale="0.005 0.005 0.005"
         rotation="0 180 0"
       ></a-entity>
       <a-entity
         id="Mclaren"
-        gltf-model="/static/media/mclaren.613298b83207f979acdc.glb"
+        gltf-model={Mclaren}
         position="6.38411 0 2.66325"
         rotation="0 -130 0"
       ></a-entity>
       <a-entity
         id="Maserati"
-        gltf-model="/static/media/maserati.162263bbbe981df8d355.glb"
+        gltf-model={Maserati}
         position="6.61194 0 6.61513"
         rotation="0 -130 0"
       ></a-entity>
       <a-entity
         id="Kawasaki"
-        gltf-model="/static/media/kawasaki.a54cea0f37e0cb8446af.glb"
+        gltf-model={Kawasaki}
         position="5.54428 0.14614 8.60233"
         rotation="0 -130 0"
       ></a-entity>
