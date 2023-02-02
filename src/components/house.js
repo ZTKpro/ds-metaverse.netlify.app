@@ -6,6 +6,7 @@ import Couch from "../models/couch.glb";
 import Mclaren from "../models/mclaren.glb";
 import Maserati from "../models/maserati.glb";
 import Kawasaki from "../models/kawasaki.glb";
+import DisplayImg from "../models/bg.png";
 
 function House() {
   return (
@@ -48,6 +49,15 @@ function House() {
         rotation="0 -130 0"
       ></a-entity>
       <a-box
+        id="Display"
+        material=""
+        geometry=""
+        scale="7.03596 2.49873 0.3"
+        position="-0.94317 1.624 -3.982"
+        src={DisplayImg}
+        roughness="0"
+      ></a-box>
+      <a-box
         id="main-wall-opacity"
         material="opacity: 0.08"
         geometry=""
@@ -70,15 +80,7 @@ function House() {
         scale="9.32185 3 0.3"
         position="-1.10326 1.55 -4.01051"
       ></a-box>
-      <a-box
-        id="Display"
-        material=""
-        geometry=""
-        scale="7.03596 2.49873 0.3"
-        position="-0.94317 1.624 -3.982"
-        src="/static/media/bg.498c964d2b74bc9cd3a4.png"
-        roughness="0"
-      ></a-box>
+
       <a-box
         id="main-wall-left"
         material=""
