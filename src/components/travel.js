@@ -10,7 +10,7 @@ export default function Travel() {
         geometry=""
         id="map"
         src={Map}
-        position="3.42162 1.5 -1.90492"
+        position="3.422 1.58473 -1.905"
         rotation="0 -90 0"
         scale="3 2.8 1"
         roughness="0"

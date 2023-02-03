@@ -12,15 +12,39 @@ import Mclaren from "../models/mclaren.glb";
 import Maserati from "../models/maserati.glb";
 import Kawasaki from "../models/kawasaki.glb";
 import DisplayImg from "../models/bg.png";
+import Light from "../models/light.png";
+import Pause from "../models/pause.png";
+import Play from "../models/play.png";
+import { useEffect, useState } from "react";
 
 function House() {
+  const [music, setMusic] = useState(false);
+
+  useEffect(() => {
+    const getLight = document.getElementById("light");
+    const getPlayer = document.getElementById("player");
+
+    [getLight, getPlayer].forEach(function (elem) {
+      elem.addEventListener("mouseenter", function () {
+        elem.setAttribute("opacity", "0.9");
+      });
+      elem.addEventListener("mouseleave", function () {
+        elem.setAttribute("opacity", "0.5");
+      });
+    });
+
+    getPlayer.addEventListener("click", setMusic(!music));
+  }, []);
+
   return (
     <>
       <a-box
         id="Floor"
         scale="25 0.1 25"
-        material="roughness: 0.8"
+        material="roughness: 0.1"
         color="black"
+        shader="flat"
+        geometry=""
       ></a-box>
       <Travel />
       <a-entity
@@ -86,13 +110,29 @@ function House() {
         position="-0.94317 1.624 -3.982"
         src={DisplayImg}
         roughness="0"
+        shader="flat"
       >
+        <a-plane
+          id="light"
+          material=""
+          geometry=""
+          position="-0.1 0 0.6"
+          scale="0.072 0.18054 1"
+          shader="flat"
+          src={Light}
+          opacity="0.5"
+          animation_scale="property: opacity; to: 1 1 1; dur: 200; startEvents: mouseenter"
+          animation_scale_reverse="property: opacity; to: 0.5 0.5 0.5; dur: 200; startEvents: mouseleave"
+        ></a-plane>
         <a-plane
           id="player"
           material=""
           geometry=""
-          position="0 0 0.6"
-          scale="0.1 0.22968 1"
+          position="0.1 0 0.6"
+          scale="0.072 0.18054 1"
+          shader="flat"
+          src={music ? Pause : Play}
+          opacity="0.5"
         ></a-plane>
       </a-box>
       <a-box
@@ -108,7 +148,6 @@ function House() {
         geometry=""
         scale="0.3 3 4.21596"
         color="#000000"
-        roughness="0"
         position="3.6 1.55 -2.0481"
       ></a-box>
       <a-box
@@ -136,11 +175,18 @@ function House() {
         scale="9.53124 3 0.3"
         position="-0.97538 1.55 9.49451"
       ></a-box>
+
       <a-light
         type=""
-        light="type: point; intensity: 10; color: #ffffff"
-        position="-1.52658 6.81507 3.28287"
-        id="main-light-2"
+        light="type: spot; intensity: 12; color: #ffffff; angle: 30; target: #Bag; penumbra: 1"
+        position="-3.34512 4.41342 5.54072"
+        id="main-light-bag"
+      ></a-light>
+      <a-light
+        type=""
+        light="type: spot; intensity: 1;  angle: 70; target: #Display; penumbra: 1"
+        position="0 7 5"
+        id="main-light-display"
       ></a-light>
       <a-camera>
         <a-cursor color="#1aaffc"></a-cursor>
