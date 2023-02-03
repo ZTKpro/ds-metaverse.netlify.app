@@ -61,6 +61,7 @@ function House() {
     return () => {
       getPlayer.removeEventListener("click", changeSrc);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [music]);
 
   useEffect(() => {
@@ -147,7 +148,7 @@ function House() {
         id="Kawasaki"
         gltf-model={Kawasaki}
         position="1.93287 0.146 7.98018"
-        rotation="0 -130 0"
+        rotation="0 -140 0"
       ></a-entity>
       <a-box
         id="Display"
@@ -250,7 +251,7 @@ function House() {
         id="main-light-kawasaki"
       ></a-light>
 
-      <a-camera>
+      <a-camera wasd-controls="acceleration: 10">
         <a-cursor color="#1aaffc"></a-cursor>
       </a-camera>
     </>
