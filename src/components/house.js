@@ -19,6 +19,7 @@ import { useEffect, useState } from "react";
 
 function House() {
   const [music, setMusic] = useState(false);
+  const [light, setLight] = useState(false);
 
   useEffect(() => {
     const getLight = document.getElementById("light");
@@ -32,9 +33,47 @@ function House() {
         elem.setAttribute("opacity", "0.5");
       });
     });
-
-    getPlayer.addEventListener("click", setMusic(!music));
   }, []);
+
+  useEffect(() => {
+    const getPlayer = document.getElementById("player");
+
+    const changeSrc = () => {
+      if (music) {
+        getPlayer.setAttribute("src", Play);
+        getPlayer.setAttribute("color", "#FFF");
+      } else {
+        getPlayer.setAttribute("src", Pause);
+        getPlayer.setAttribute("color", "#00a9ff");
+      }
+
+      setMusic(!music);
+    };
+
+    getPlayer.addEventListener("click", changeSrc);
+
+    return () => {
+      getPlayer.removeEventListener("click", changeSrc);
+    };
+  }, [music]);
+
+  useEffect(() => {
+    const getLight = document.getElementById("light");
+
+    const changeSrc = () => {
+      light
+        ? getLight.setAttribute("color", "#00a9ff")
+        : getLight.setAttribute("color", "#FFF");
+
+      setLight(!light);
+    };
+
+    getLight.addEventListener("click", changeSrc);
+
+    return () => {
+      getLight.removeEventListener("click", changeSrc);
+    };
+  }, [light]);
 
   return (
     <>
