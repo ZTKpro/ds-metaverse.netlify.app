@@ -138,7 +138,7 @@ function House() {
       <a-entity
         id="Kawasaki"
         gltf-model={Kawasaki}
-        position="5.54428 0.14614 8.60233"
+        position="1.4903 0.14614 8.25573"
         rotation="0 -130 0"
       ></a-entity>
       <a-box
@@ -227,6 +227,21 @@ function House() {
         position="0 7 5"
         id="main-light-display"
       ></a-light>
+
+      {/* added lighting */}
+      <a-light
+        light="type: spot; angle: 150; target: #Couch; penumbra: 1;"
+        intensity={light ? 3 : 0}
+        position="-1 7 0"
+        id="main-light-couch"
+      ></a-light>
+      <a-light
+        light="type: spot; angle: 40; target: #Kawasaki; penumbra: 1;"
+        intensity={light ? 3 : 0}
+        position="1.2 5 8"
+        id="main-light-kawasaki"
+      ></a-light>
+
       <a-camera>
         <a-cursor color="#1aaffc"></a-cursor>
       </a-camera>
