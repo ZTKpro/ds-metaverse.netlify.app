@@ -62,8 +62,8 @@ function House() {
 
     const changeSrc = () => {
       light
-        ? getLight.setAttribute("color", "#00a9ff")
-        : getLight.setAttribute("color", "#FFF");
+        ? getLight.setAttribute("color", "#FFF")
+        : getLight.setAttribute("color", "#00a9ff");
 
       setLight(!light);
     };
