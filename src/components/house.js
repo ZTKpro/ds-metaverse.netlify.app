@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "aframe";
 
 import Travel from "./travel";
@@ -11,13 +12,16 @@ import Laptop from "../models/laptop.glb";
 import Mclaren from "../models/mclaren.glb";
 import Maserati from "../models/maserati.glb";
 import Kawasaki from "../models/kawasaki.glb";
+
 import DisplayImg from "../models/bg.png";
 import Light from "../models/light.png";
 import Pause from "../models/pause.png";
 import Play from "../models/play.png";
-import { useEffect, useState } from "react";
+
+import Song from "../models/song.mp3";
 
 function House() {
+  const [song] = useState(new Audio(Song));
   const [music, setMusic] = useState(false);
   const [light, setLight] = useState(false);
 
@@ -42,9 +46,11 @@ function House() {
       if (music) {
         getPlayer.setAttribute("src", Play);
         getPlayer.setAttribute("color", "#FFF");
+        song.pause();
       } else {
         getPlayer.setAttribute("src", Pause);
         getPlayer.setAttribute("color", "#00a9ff");
+        song.play();
       }
 
       setMusic(!music);
@@ -61,9 +67,11 @@ function House() {
     const getLight = document.getElementById("light");
 
     const changeSrc = () => {
-      light
-        ? getLight.setAttribute("color", "#FFF")
-        : getLight.setAttribute("color", "#00a9ff");
+      if (light) {
+        getLight.setAttribute("color", "#FFF");
+      } else {
+        getLight.setAttribute("color", "#00a9ff");
+      }
 
       setLight(!light);
     };
@@ -138,7 +146,7 @@ function House() {
       <a-entity
         id="Kawasaki"
         gltf-model={Kawasaki}
-        position="1.4903 0.14614 8.25573"
+        position="1.93287 0.146 7.98018"
         rotation="0 -130 0"
       ></a-entity>
       <a-box
